@@ -5,21 +5,21 @@ import { Menu, X, Phone, Mail } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useNavDirection } from "@/lib/navigation-context"
 
 const navLinks = [
-  { label: "Accueil", href: "#accueil" },
-  { label: "Solutions Call Center", href: "#services" },
-  { label: "Services IT", href: "/it-services" },
-  { label: "Pourquoi Nous", href: "#pourquoi" },
-  { label: "A Propos", href: "#apropos" },
-  { label: "Contact", href: "#contact" },
+  { label: "Accueil", href: "/" },
+  { label: "Nos Services", href: "/services" },
+  { label: "Pourquoi Nous", href: "/pourquoi-nous" },
+  { label: "À Propos", href: "/a-propos" },
+  { label: "Contact", href: "/contact" },
 ]
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileOpen, setIsMobileOpen] = useState(false)
   const pathname = usePathname()
-  const isHome = pathname === "/"
+  const { setDirection } = useNavDirection()
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50)
@@ -27,9 +27,11 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const getHref = (link: { href: string }) => {
-    if (link.href.startsWith("/")) return link.href
-    return isHome ? link.href : `/${link.href}`
+  const handleLinkClick = (targetHref: string) => {
+    const currentIndex = navLinks.findIndex((l) => l.href === pathname)
+    const targetIndex = navLinks.findIndex((l) => l.href === targetHref)
+    setDirection(targetIndex >= currentIndex ? "left" : "right")
+    setIsMobileOpen(false)
   }
 
   return (
@@ -62,7 +64,7 @@ export function Navbar() {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           {/* Logo */}
-          <Link href="/" className="group flex items-center gap-2">
+          <Link href="/" onClick={() => handleLinkClick("/")} className="group flex items-center gap-2">
             <img
               src="/images/logo.jpeg"
               alt="Zahir Connect Logo"
@@ -85,7 +87,8 @@ export function Navbar() {
             {navLinks.map((link) => (
               <Link
                 key={link.label}
-                href={getHref(link)}
+                href={link.href}
+                onClick={() => handleLinkClick(link.href)}
                 className={cn(
                   "relative rounded-lg px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-foreground",
                   pathname === link.href ? "text-primary bg-secondary/50" : "text-muted-foreground"
@@ -98,10 +101,11 @@ export function Navbar() {
 
           {/* CTA */}
           <Link
-            href={isHome ? "#contact" : "/#contact"}
+            href="/contact"
+            onClick={() => handleLinkClick("/contact")}
             className="hidden rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/25 lg:block"
           >
-            Demander un Devis
+            Parlons de Votre Projet
           </Link>
 
           {/* Mobile toggle */}
@@ -126,19 +130,19 @@ export function Navbar() {
             {navLinks.map((link) => (
               <Link
                 key={link.label}
-                href={getHref(link)}
-                onClick={() => setIsMobileOpen(false)}
+                href={link.href}
+                onClick={() => handleLinkClick(link.href)}
                 className="rounded-lg px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
               >
                 {link.label}
               </Link>
             ))}
             <Link
-              href={isHome ? "#contact" : "/#contact"}
-              onClick={() => setIsMobileOpen(false)}
+              href="/contact"
+              onClick={() => handleLinkClick("/contact")}
               className="mt-2 rounded-lg bg-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground"
             >
-              Demander un Devis
+              Parlons de Votre Projet
             </Link>
           </div>
         </div>

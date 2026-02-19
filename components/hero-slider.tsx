@@ -51,7 +51,7 @@ export function HeroSlider() {
   }, [next])
 
   return (
-    <section id="accueil" className="relative h-[85vh] min-h-[600px] w-full overflow-hidden">
+    <section id="accueil" className="relative h-[calc(100vh-5rem)] lg:h-[calc(100vh-7.25rem)] min-h-[600px] w-full overflow-hidden">
       {/* Slides */}
       {slides.map((slide, i) => (
         <div
@@ -67,13 +67,13 @@ export function HeroSlider() {
             className="absolute inset-0 h-full w-full object-cover"
           />
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-slate-900/25 to-transparent" />
         </div>
       ))}
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-6">
-        <div className="max-w-2xl">
+      <div className="relative z-10 mx-auto flex h-full max-w-5xl items-center px-6">
+        <div className="max-w-lg">
           {slides.map((slide, i) => (
             <div
               key={i}
@@ -84,26 +84,26 @@ export function HeroSlider() {
                   : "translate-y-8 opacity-0 pointer-events-none"
               )}
             >
-              <span className="mb-4 inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
+              <span className="mb-4 inline-block rounded-full border border-primary/50 bg-primary/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
                 {slide.subtitle}
               </span>
-              <h1 className="mb-6 font-display text-4xl font-bold leading-tight text-foreground md:text-5xl lg:text-6xl">
+              <h1 className="mb-6 font-display text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
                 {slide.title}
               </h1>
-              <p className="mb-8 max-w-lg text-base leading-relaxed text-muted-foreground md:text-lg">
+              <p className="mb-8 text-base leading-relaxed text-white/80 md:text-lg">
                 {slide.description}
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="group flex items-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
                 >
                   Contactez-nous
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
-                  href="#services"
-                  className="rounded-lg border border-border bg-secondary/50 px-8 py-3.5 text-sm font-semibold text-foreground transition-all hover:border-primary/50 hover:bg-secondary"
+                  href="/services"
+                  className="rounded-lg border border-white/30 bg-white/10 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:border-white/50 hover:bg-white/20"
                 >
                   Nos Services
                 </a>
@@ -114,7 +114,7 @@ export function HeroSlider() {
       </div>
 
       {/* Controls */}
-      <div className="absolute bottom-8 left-0 right-0 z-20 mx-auto flex max-w-7xl items-center justify-between px-6">
+      <div className="absolute bottom-8 left-0 right-0 z-20 mx-auto flex max-w-5xl items-center justify-between px-6">
         <div className="flex items-center gap-3">
           {slides.map((_, i) => (
             <button
@@ -123,7 +123,7 @@ export function HeroSlider() {
               onClick={() => goTo(i)}
               className={cn(
                 "h-1.5 rounded-full transition-all duration-500",
-                i === current ? "w-10 bg-primary" : "w-4 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                i === current ? "w-10 bg-primary" : "w-4 bg-white/30 hover:bg-white/50"
               )}
               aria-label={`Slide ${i + 1}`}
             />
@@ -133,7 +133,7 @@ export function HeroSlider() {
           <button
             type="button"
             onClick={prev}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-secondary/50 text-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
             aria-label="Previous slide"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -141,7 +141,7 @@ export function HeroSlider() {
           <button
             type="button"
             onClick={next}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-secondary/50 text-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
             aria-label="Next slide"
           >
             <ChevronRight className="h-5 w-5" />

@@ -1,6 +1,8 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
+import { NavProvider } from "@/lib/navigation-context"
+import { PageTransitionWrapper } from "@/components/page-transition"
 
 import './globals.css'
 
@@ -13,7 +15,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0d1117',
+  themeColor: '#fafafa',
 }
 
 export default function RootLayout({
@@ -23,7 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <NavProvider>
+          <PageTransitionWrapper>
+            {children}
+          </PageTransitionWrapper>
+        </NavProvider>
+      </body>
     </html>
   )
 }

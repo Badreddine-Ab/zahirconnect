@@ -1,22 +1,20 @@
 'use client';
 
 import { Phone, Mail, MapPin } from "lucide-react"
+import Link from "next/link"
 
 const footerLinks = {
   services: [
-    { label: "Telemarketing", href: "#services" },
-    { label: "Service Client", href: "#services" },
-    { label: "Prise de RDV", href: "#services" },
-    { label: "Televente", href: "#services" },
-    { label: "Support Technique", href: "#services" },
-    { label: "Externalisation BPO", href: "#services" },
+    { label: "Prospection Commerciale", href: "/services/prospection" },
+    { label: "Télévente", href: "/services/televente" },
+    { label: "Externalisation BPO", href: "/services/bpo" },
+    { label: "Solutions Digitales", href: "/services/solutions-digitales" },
   ],
   entreprise: [
-    { label: "A Propos", href: "#apropos" },
-    { label: "Nos Services", href: "#services" },
-    { label: "Temoignages", href: "#temoignages" },
-    { label: "Contact", href: "#contact" },
-    { label: "Carrieres", href: "#contact" },
+    { label: "À Propos", href: "/a-propos" },
+    { label: "Nos Services", href: "/services" },
+    { label: "Pourquoi Nous", href: "/pourquoi-nous" },
+    { label: "Contact", href: "/contact" },
   ],
 }
 
@@ -71,9 +69,9 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                  <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -87,9 +85,9 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {footerLinks.entreprise.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                  <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -98,7 +96,7 @@ export function Footer() {
           {/* Newsletter / CTA */}
           <div>
             <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-foreground">
-              Restez Connecte
+              Restez Connecté
             </h4>
             <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
               Recevez nos dernieres actualites et offres directement dans votre boite mail.
@@ -126,10 +124,10 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
-              Mentions Legales
+              Mentions Légales
             </a>
             <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
-              Politique de Confidentialite
+              Politique de Confidentialité
             </a>
           </div>
         </div>
