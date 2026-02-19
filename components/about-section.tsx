@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 import { CheckCircle2, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useInView } from "@/hooks/use-in-view"
@@ -29,10 +29,12 @@ export function AboutSection() {
             )}
           >
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-              <img
+              <Image
                 src="/images/about.jpg"
                 alt="Zahir Connect - Notre equipe a Marrakech"
-                className="absolute inset-0 h-full w-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
             </div>

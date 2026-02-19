@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback, useRef, useEffect } from "react"
+import { useState, useCallback, useRef } from "react"
 
 interface UseInViewOptions extends IntersectionObserverInit {
     triggerOnce?: boolean
@@ -13,13 +13,6 @@ export function useInView({
 }: UseInViewOptions = {}) {
     const [isInView, setInView] = useState(false)
     const observerRef = useRef<IntersectionObserver | null>(null)
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setInView(true)
-        }, 2000)
-        return () => clearTimeout(timer)
-    }, [])
 
     const ref = useCallback((node: HTMLElement | null) => {
         if (observerRef.current) {

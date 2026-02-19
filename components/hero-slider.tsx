@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react"
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 const slides = [
   {
@@ -57,14 +58,17 @@ export function HeroSlider() {
         <div
           key={i}
           className={cn(
-            "absolute inset-0 transition-all duration-1000 ease-in-out",
+            "absolute inset-0 transition-[opacity,transform] duration-1000 ease-in-out",
             i === current ? "opacity-100 scale-100" : "opacity-0 scale-105"
           )}
         >
-          <img
-            src={slide.image || "/placeholder.svg"}
+          <Image
+            src={slide.image}
             alt={slide.title}
-            className="absolute inset-0 h-full w-full object-cover"
+            fill
+            className="object-cover"
+            priority={i === 0}
+            sizes="100vw"
           />
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-slate-900/25 to-transparent" />
@@ -78,7 +82,7 @@ export function HeroSlider() {
             <div
               key={i}
               className={cn(
-                "absolute transition-all duration-700",
+                "absolute transition-[opacity,transform] duration-700",
                 i === current
                   ? "translate-y-0 opacity-100"
                   : "translate-y-8 opacity-0 pointer-events-none"

@@ -1,6 +1,18 @@
+import type { Metadata } from 'next'
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Layers, Headphones, FileSpreadsheet, Calculator, ArrowRight, CheckCircle2 } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: 'Externalisation BPO - Service Clients & Administration',
+  description: "Externalisez vos processus support avec Zahir Connect : service clients multicanal, gestion administrative et pré-comptabilité. Réduisez vos coûts de 40 à 60%. Maroc.",
+  alternates: { canonical: '/services/bpo' },
+  openGraph: {
+    title: 'Externalisation BPO | Zahir Connect',
+    description: "Concentrez-vous sur votre coeur de métier — confiez-nous votre service clients, administration et pré-comptabilité.",
+    url: '/services/bpo',
+  },
+}
 import Link from "next/link"
 
 const features = [

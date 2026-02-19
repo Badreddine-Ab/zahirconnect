@@ -2,6 +2,7 @@
 
 import { Phone, Mail, MapPin } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 const footerLinks = {
   services: [
@@ -26,11 +27,11 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-4 flex items-center gap-2">
-              <img
+              <Image
                 src="/images/logo.jpeg"
                 alt="Zahir Connect Logo"
-                width="48"
-                height="48"
+                width={48}
+                height={48}
                 className="h-12 w-12 rounded-lg object-contain"
               />
               <div className="flex flex-col">

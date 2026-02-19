@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, useMemo } from "react"
 
 type Direction = "left" | "right"
 
@@ -16,9 +16,10 @@ const NavContext = createContext<NavContextType>({
 
 export function NavProvider({ children }: { children: React.ReactNode }) {
   const [direction, setDirection] = useState<Direction>("right")
+  const value = useMemo(() => ({ direction, setDirection }), [direction])
 
   return (
-    <NavContext.Provider value={{ direction, setDirection }}>
+    <NavContext.Provider value={value}>
       {children}
     </NavContext.Provider>
   )

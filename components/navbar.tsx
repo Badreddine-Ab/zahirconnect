@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Menu, X, Phone, Mail } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useNavDirection } from "@/lib/navigation-context"
 
@@ -22,8 +23,17 @@ export function Navbar() {
   const { setDirection } = useNavDirection()
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50)
-    window.addEventListener("scroll", handleScroll)
+    let ticking = false
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50)
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -65,12 +75,13 @@ export function Navbar() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           {/* Logo */}
           <Link href="/" onClick={() => handleLinkClick("/")} className="group flex items-center gap-2">
-            <img
+            <Image
               src="/images/logo.jpeg"
               alt="Zahir Connect Logo"
-              width="48"
-              height="48"
+              width={48}
+              height={48}
               className="h-12 w-12 rounded-lg object-contain"
+              priority
             />
             <div className="flex flex-col">
               <span className="font-display text-lg font-bold leading-tight text-foreground">

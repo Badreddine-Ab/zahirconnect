@@ -1,6 +1,18 @@
+import type { Metadata } from 'next'
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Code2, Globe, Smartphone, Shield, Cloud, ArrowRight, CheckCircle2 } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: 'Solutions Digitales - Sites Web, Apps Mobiles & Cloud',
+  description: "Développement web, applications mobiles (iOS/Android), sécurité informatique et hébergement cloud. Solutions digitales sur mesure par Zahir Connect, Marrakech.",
+  alternates: { canonical: '/services/solutions-digitales' },
+  openGraph: {
+    title: 'Solutions Digitales | Zahir Connect',
+    description: "De l'idée à la mise en production — sites web, apps mobiles, cybersécurité et cloud. Expert digital à Marrakech.",
+    url: '/services/solutions-digitales',
+  },
+}
 import Link from "next/link"
 
 const features = [

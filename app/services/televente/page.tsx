@@ -1,6 +1,18 @@
+import type { Metadata } from 'next'
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { TrendingUp, Zap, Heart, BarChart2, ArrowRight, CheckCircle2 } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: 'Télévente - Boostez votre Chiffre d\'Affaires',
+  description: "Augmentez vos ventes avec les équipes de télévente de Zahir Connect. Scripts éprouvés, fidélisation client, opérations 6j/7. Centre d'appel expert à Marrakech.",
+  alternates: { canonical: '/services/televente' },
+  openGraph: {
+    title: 'Télévente | Zahir Connect',
+    description: "Experts en conversion téléphonique — vente directe, upselling et fidélisation depuis Marrakech.",
+    url: '/services/televente',
+  },
+}
 import Link from "next/link"
 
 const features = [

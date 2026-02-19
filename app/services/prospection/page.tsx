@@ -1,6 +1,18 @@
+import type { Metadata } from 'next'
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Search, Users, Target, BarChart2, ArrowRight, CheckCircle2 } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: 'Prospection Commerciale B2B & B2C - Call Center Marrakech',
+  description: "Générez un flux constant de leads qualifiés avec Zahir Connect. Campagnes de prospection téléphonique B2B et B2C, ciblage précis, reporting en temps réel. Marrakech.",
+  alternates: { canonical: '/services/prospection' },
+  openGraph: {
+    title: 'Prospection Commerciale | Zahir Connect',
+    description: "Leads qualifiés, pipeline rempli — externalisez votre prospection avec notre centre d'appel à Marrakech.",
+    url: '/services/prospection',
+  },
+}
 import Link from "next/link"
 
 const features = [
