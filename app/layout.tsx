@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_MA',
     siteName: 'Zahir Connect',
-    images: [{ url: '/images/logo.jpeg', width: 400, height: 400, alt: 'Zahir Connect - Call Center Marrakech' }],
+    images: [{ url: '/images/Sans titre-3.png', width: 400, height: 400, alt: 'Zahir Connect - Call Center Marrakech' }],
   },
   twitter: {
     card: 'summary',
@@ -46,8 +46,8 @@ const jsonLd = {
   url: BASE_URL,
   telephone: '+212524000000',
   email: 'contact@zahirconnect.ma',
-  logo: `${BASE_URL}/images/logo.jpeg`,
-  image: `${BASE_URL}/images/logo.jpeg`,
+  logo: `${BASE_URL}/images/Sans titre-3.png`,
+  image: `${BASE_URL}/images/Sans titre-3.png`,
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Boulevard Mohammed V, Gueliz',

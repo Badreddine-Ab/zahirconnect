@@ -27,13 +27,15 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-4 flex items-center gap-2">
-              <Image
-                src="/images/logo.jpeg"
-                alt="Zahir Connect Logo"
-                width={48}
-                height={48}
-                className="h-12 w-12 rounded-lg object-contain"
-              />
+              <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl">
+                <Image
+                  src="/images/Sans titre-3.png"
+                  alt="Zahir Connect Logo"
+                  width={400}
+                  height={400}
+                  className="h-full w-full scale-[4] translate-y-0.5 object-contain"
+                />
+              </div>
               <div className="flex flex-col">
                 <span className="font-display text-lg font-bold text-foreground">
                   Zahir Connect

@@ -75,14 +75,16 @@ export function Navbar() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           {/* Logo */}
           <Link href="/" onClick={() => handleLinkClick("/")} className="group flex items-center gap-2">
-            <Image
-              src="/images/logo.jpeg"
-              alt="Zahir Connect Logo"
-              width={48}
-              height={48}
-              className="h-12 w-12 rounded-lg object-contain"
-              priority
-            />
+            <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl">
+              <Image
+                src="/images/Sans titre-3.png"
+                alt="Zahir Connect Logo"
+                width={400}
+                height={400}
+                className="h-full w-full scale-[4] translate-y-0.5 object-contain"
+                priority
+              />
+            </div>
             <div className="flex flex-col">
               <span className="font-display text-xl font-bold leading-tight text-foreground">
                 Zahir Connect
