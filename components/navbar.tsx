@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, Phone, Mail } from "lucide-react"
+import { Menu, X, Phone, Mail, Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import Image from "next/image"
@@ -110,6 +110,25 @@ export function Navbar() {
             ))}
           </div>
 
+          {/* Recruitment button */}
+          <Link
+            href="/recrutement"
+            onClick={() => handleLinkClick("/recrutement")}
+            className={cn(
+              "hidden items-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-semibold transition-all lg:flex",
+              pathname === "/recrutement"
+                ? "border-primary bg-primary/10 text-primary"
+                : "border-primary/40 text-primary hover:border-primary hover:bg-primary/10 hover:scale-105"
+            )}
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+            </span>
+            <Sparkles className="h-3.5 w-3.5" />
+            Nous Rejoindre
+          </Link>
+
           {/* CTA */}
           <Link
             href="/contact"
@@ -148,6 +167,14 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/recrutement"
+              onClick={() => handleLinkClick("/recrutement")}
+              className="flex items-center justify-center gap-2 rounded-lg border border-primary/40 px-6 py-3 text-center text-base font-semibold text-primary transition-colors hover:bg-primary/10"
+            >
+              <Sparkles className="h-4 w-4" />
+              Nous Rejoindre
+            </Link>
             <Link
               href="/contact"
               onClick={() => handleLinkClick("/contact")}
