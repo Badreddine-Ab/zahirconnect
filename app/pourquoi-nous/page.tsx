@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Navbar } from "@/components/navbar"
 
 export const metadata: Metadata = {
   title: 'Pourquoi Choisir Zahir Connect - Notre Différence',
@@ -18,7 +17,6 @@ import { Footer } from "@/components/footer"
 export default function PourquoiNousPage() {
   return (
     <main className="min-h-screen">
-      <Navbar />
       <WhyChooseUs />
       <CtaBanner />
       <Footer />

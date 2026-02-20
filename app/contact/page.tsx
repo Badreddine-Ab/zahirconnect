@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Navbar } from "@/components/navbar"
 
 export const metadata: Metadata = {
   title: 'Contactez-nous - Devis Gratuit',
@@ -17,7 +16,6 @@ import { Footer } from "@/components/footer"
 export default function ContactPage() {
   return (
     <main className="min-h-screen">
-      <Navbar />
       <ContactSection />
       <Footer />
     </main>

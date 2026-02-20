@@ -84,7 +84,7 @@ export function Navbar() {
               priority
             />
             <div className="flex flex-col">
-              <span className="font-display text-lg font-bold leading-tight text-foreground">
+              <span className="font-display text-xl font-bold leading-tight text-foreground">
                 Zahir Connect
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-primary">
@@ -101,7 +101,7 @@ export function Navbar() {
                 href={link.href}
                 onClick={() => handleLinkClick(link.href)}
                 className={cn(
-                  "relative rounded-lg px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-foreground",
+                  "relative rounded-lg px-4 py-2 text-base font-medium transition-colors hover:bg-secondary hover:text-foreground",
                   pathname === link.href ? "text-primary bg-secondary/50" : "text-muted-foreground"
                 )}
               >
@@ -114,7 +114,7 @@ export function Navbar() {
           <Link
             href="/contact"
             onClick={() => handleLinkClick("/contact")}
-            className="hidden rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/25 lg:block"
+            className="hidden rounded-lg bg-primary px-6 py-2.5 text-base font-semibold text-primary-foreground transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/25 lg:block"
           >
             Parlons de Votre Projet
           </Link>
@@ -143,7 +143,7 @@ export function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={() => handleLinkClick(link.href)}
-                className="rounded-lg px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                className="rounded-lg px-4 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
               >
                 {link.label}
               </Link>
@@ -151,7 +151,7 @@ export function Navbar() {
             <Link
               href="/contact"
               onClick={() => handleLinkClick("/contact")}
-              className="mt-2 rounded-lg bg-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground"
+              className="mt-2 rounded-lg bg-primary px-6 py-3 text-center text-base font-semibold text-primary-foreground"
             >
               Parlons de Votre Projet
             </Link>

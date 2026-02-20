@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Code2, Globe, Smartphone, Shield, Cloud, ArrowRight, CheckCircle2 } from "lucide-react"
 
@@ -56,7 +55,6 @@ const benefits = [
 export default function SolutionsDigitalesPage() {
   return (
     <main className="min-h-screen">
-      <Navbar />
 
       {/* Hero */}
       <section className="relative overflow-hidden py-24 lg:py-32">

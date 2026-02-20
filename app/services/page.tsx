@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Navbar } from "@/components/navbar"
 
 export const metadata: Metadata = {
   title: 'Nos Services - Call Center Marrakech',
@@ -19,7 +18,6 @@ import { Footer } from "@/components/footer"
 export default function ServicesPage() {
   return (
     <main className="min-h-screen">
-      <Navbar />
       <ServicesSection />
       <ProcessSection />
       <CtaBanner />

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { Navbar } from "@/components/navbar"
 import { HeroSlider } from "@/components/hero-slider"
+import { ScrollLock } from "@/components/scroll-lock"
 
 export const metadata: Metadata = {
   title: 'Zahir Connect | Call Center Marrakech - Prospection, Télévente & BPO',
@@ -15,9 +15,11 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="h-screen overflow-hidden">
-      <Navbar />
-      <HeroSlider />
-    </main>
+    <>
+      <ScrollLock />
+      <main className="overflow-hidden">
+        <HeroSlider />
+      </main>
+    </>
   )
 }

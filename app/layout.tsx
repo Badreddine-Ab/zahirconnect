@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import { NavProvider } from "@/lib/navigation-context"
 import { PageTransitionWrapper } from "@/components/page-transition"
+import { Navbar } from "@/components/navbar"
 
 import './globals.css'
 
@@ -98,6 +99,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <NavProvider>
+          <Navbar />
           <PageTransitionWrapper>
             {children}
           </PageTransitionWrapper>
