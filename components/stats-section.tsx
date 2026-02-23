@@ -5,10 +5,7 @@ import { cn } from "@/lib/utils"
 import { useInView } from "@/hooks/use-in-view"
 
 const stats = [
-  { value: 300, suffix: "+", label: "Collaborateurs" },
-  { value: 5000, suffix: "+", label: "Rendez-vous livrés / mois" },
-  { value: 2, suffix: "M+", label: "Appels acheminés" },
-  { value: 98, suffix: "%", label: "Taux de satisfaction" },
+  { value: 10, suffix: "+", label: "Ans d'expérience" },
 ]
 
 function AnimatedCounter({

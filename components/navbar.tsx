@@ -54,9 +54,9 @@ export function Navbar() {
               <Phone className="h-3.5 w-3.5" />
               <span>+212 690 192 593</span>
             </a>
-            <a href="mailto:contact@zahirconnect.ma" className="flex items-center gap-2 transition-colors hover:text-primary">
+            <a href="mailto:contact@zahirconnect.com" className="flex items-center gap-2 transition-colors hover:text-primary">
               <Mail className="h-3.5 w-3.5" />
-              <span>contact@zahirconnect.ma</span>
+              <span>contact@zahirconnect.com</span>
             </a>
           </div>
           <span>Marrakech, Maroc</span>

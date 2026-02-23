@@ -74,7 +74,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-foreground">Email</p>
-                    <p className="text-sm text-muted-foreground">contact@zahirconnect.ma</p>
+                    <p className="text-sm text-muted-foreground">contact@zahirconnect.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -89,9 +89,9 @@ export function ContactSection() {
                       rel="noopener noreferrer"
                       className="text-sm text-muted-foreground transition-colors hover:text-primary"
                     >
-                      Boulevard Mohammed V, Guéliz
+                      Bureau 18, 5ème étage, Centre d'affaires Bergis
                       <br />
-                      Marrakech, Maroc
+                      3 Avenue Safi, Marrakech 40090
                     </a>
                   </div>
                 </div>
@@ -111,18 +111,28 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* Map link */}
-            <a
-              href="https://maps.app.goo.gl/WqsiiiCsZKQAnw7k6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-3 overflow-hidden rounded-xl border border-border bg-card px-6 py-5 transition-all hover:border-primary/50 hover:bg-primary/5"
-            >
-              <MapPin className="h-5 w-5 shrink-0 text-primary" />
-              <span className="text-sm font-medium text-foreground transition-colors group-hover:text-primary">
-                Voir sur Google Maps
-              </span>
-            </a>
+            {/* Embedded map */}
+            <div className="overflow-hidden rounded-xl border border-border">
+              <iframe
+                title="Zahir Connect — Bureau 18, Centre d'affaires Bergis, 3 Avenue Safi, Marrakech"
+                src="https://maps.google.com/maps?q=Centre+d%27affaires+Bergis%2C+3+Avenue+Safi%2C+Marrakech+40090%2C+Maroc&output=embed&hl=fr&z=17"
+                width="100%"
+                height="220"
+                style={{ border: 0, display: 'block' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <a
+                href="https://maps.app.goo.gl/WqsiiiCsZKQAnw7k6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-2 bg-card px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              >
+                <MapPin className="h-4 w-4 shrink-0 text-primary" />
+                Ouvrir dans Google Maps
+              </a>
+            </div>
           </div>
 
           {/* Form */}

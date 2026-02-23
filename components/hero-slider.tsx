@@ -21,15 +21,15 @@ const slides = [
     title: "Des solutions sur mesure pour votre croissance",
     description:
       "Nous personnalisons notre approche pour comprendre et traiter au mieux votre projet. Chaque client bénéficie d'un accompagnement dédié et d'une stratégie adaptée.",
-    stat: { value: "98%", label: "Satisfaction client" },
+    stat: { value: "Devis", label: "Gratuit" },
   },
   {
     image: "/images/hero-3.jpg",
     tag: "Expertise éprouvée",
     title: "Une équipe dédiée à votre réussite",
     description:
-      "Plus de 300 collaborateurs qualifiés, des technologies de pointe et un management d'excellence pour garantir les meilleurs résultats à nos partenaires.",
-    stat: { value: "24/7", label: "Disponibilité" },
+      "Des agents qualifiés, des technologies de pointe et un management d'excellence pour garantir les meilleurs résultats à nos partenaires.",
+    stat: { value: "6j/7", label: "Disponibilité" },
   },
 ]
 
@@ -159,8 +159,8 @@ export function HeroSlider() {
             >
               {[
                 { value: "10+", label: "Ans d'expérience" },
-                { value: "98%", label: "Satisfaction" },
-                { value: "24/7", label: "Disponibilité" },
+                { value: "6j/7", label: "Disponibilité" },
+                { value: "Devis", label: "Gratuit" },
               ].map((s, i) => (
                 <div key={i} className="flex flex-col gap-0.5">
                   <span className="font-display text-2xl font-black text-primary">{s.value}</span>

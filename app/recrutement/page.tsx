@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Recrutement | Zahir Connect',
     description:
-      "Rejoignez nos 300+ collaborateurs. Postes ouverts à Marrakech — aucune expérience requise.",
+      "Rejoignez notre équipe en pleine croissance à Marrakech. Postes ouverts — aucune expérience requise.",
     url: '/recrutement',
   },
 }

@@ -53,9 +53,9 @@ export function Footer() {
                 <Phone className="h-4 w-4" />
                 +212 690 192 593
               </a>
-              <a href="mailto:contact@zahirconnect.ma" className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary">
+              <a href="mailto:contact@zahirconnect.com" className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary">
                 <Mail className="h-4 w-4" />
-                contact@zahirconnect.ma
+                contact@zahirconnect.com
               </a>
               <span className="flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4" />

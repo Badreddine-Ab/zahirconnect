@@ -19,10 +19,10 @@ export default function MentionsLegalesPage() {
             <h2 className="mb-3 font-display text-lg font-semibold text-foreground">Éditeur du site</h2>
             <p>
               <strong>Zahir Connect</strong><br />
-              Boulevard Mohammed V, Guéliz<br />
+              Bureau 18, 5ème étage, Centre d'affaires Bergis, 3 Avenue Safi<br />
               Marrakech, Maroc<br />
               Téléphone : +212 690 192 593<br />
-              Email : contact@zahirconnect.ma
+              Email : contact@zahirconnect.com
             </p>
           </div>
 
@@ -56,8 +56,8 @@ export default function MentionsLegalesPage() {
             <h2 className="mb-3 font-display text-lg font-semibold text-foreground">Contact</h2>
             <p>
               Pour toute question relative aux présentes mentions légales, vous pouvez nous contacter à :{' '}
-              <a href="mailto:contact@zahirconnect.ma" className="text-primary hover:underline">
-                contact@zahirconnect.ma
+              <a href="mailto:contact@zahirconnect.com" className="text-primary hover:underline">
+                contact@zahirconnect.com
               </a>
             </p>
           </div>

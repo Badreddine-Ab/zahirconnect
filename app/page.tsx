@@ -1,11 +1,9 @@
 import type { Metadata } from 'next'
 import { HeroSlider } from "@/components/hero-slider"
-import { StatsSection } from "@/components/stats-section"
 import { ServicesSection } from "@/components/services-section"
 import { AboutSection } from "@/components/about-section"
 import { WhyChooseUs } from "@/components/why-choose-us"
 import { ProcessSection } from "@/components/process-section"
-import { TestimonialsSection } from "@/components/testimonials-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
@@ -28,13 +26,11 @@ export default function Page() {
   return (
     <main className="overflow-hidden">
       <HeroSlider />
-      <StatsSection />
       <ServicesSection />
       <AboutSection />
       <WhyChooseUs />
       <ProcessSection />
-      <TestimonialsSection />
-      <ContactSection />
+        <ContactSection />
       <Footer />
     </main>
   )

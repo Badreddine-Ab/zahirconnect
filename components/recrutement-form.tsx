@@ -57,7 +57,7 @@ const benefits = [
   { icon: TrendingUp, label: "Evolution rapide" },
   { icon: Banknote, label: "Salaire compétitif + primes" },
   { icon: Clock, label: "Horaires flexibles" },
-  { icon: Users, label: "Équipe soudée de 300+" },
+  { icon: Users, label: "Équipe soudée et ambitieuse" },
   { icon: MapPin, label: "Marrakech centre" },
 ]
 
@@ -70,8 +70,7 @@ const perks = [
 ]
 
 const stats = [
-  { value: 300, suffix: "+", label: "Collaborateurs actifs" },
-  { value: 98, suffix: "%", label: "Taux de satisfaction" },
+  { value: 10, suffix: "+", label: "Ans d'expérience" },
 ]
 
 const experienceOptions = [
@@ -273,7 +272,7 @@ export function RecrutementForm() {
             custom={2}
             className="mx-auto max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg"
           >
-            Rejoignez une équipe de 300+ collaborateurs au coeur de Marrakech.
+            Rejoignez notre équipe en pleine croissance au coeur de Marrakech.
             Que vous soyez débutant ou expérimenté, nous avons un poste fait pour vous.
           </motion.p>
 
