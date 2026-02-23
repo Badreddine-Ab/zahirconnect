@@ -56,8 +56,8 @@ export default function PolitiqueConfidentialitePage() {
               Conformément à la loi marocaine 09-08 relative à la protection des personnes physiques à l&apos;égard du
               traitement des données à caractère personnel, vous disposez d&apos;un droit d&apos;accès, de rectification,
               d&apos;opposition et de suppression de vos données. Pour exercer ces droits, contactez-nous à :{' '}
-              <a href="mailto:contact@zahirconnect.ma" className="text-primary hover:underline">
-                contact@zahirconnect.ma
+              <a href="mailto:contact@zahirconnect.com" className="text-primary hover:underline">
+                contact@zahirconnect.com
               </a>
             </p>
           </div>
@@ -75,8 +75,8 @@ export default function PolitiqueConfidentialitePage() {
             <h2 className="mb-3 font-display text-lg font-semibold text-foreground">7. Contact</h2>
             <p>
               Pour toute question relative à cette politique de confidentialité :{' '}
-              <a href="mailto:contact@zahirconnect.ma" className="text-primary hover:underline">
-                contact@zahirconnect.ma
+              <a href="mailto:contact@zahirconnect.com" className="text-primary hover:underline">
+                contact@zahirconnect.com
               </a>
             </p>
           </div>
