@@ -6,9 +6,9 @@ import { useInView } from "@/hooks/use-in-view"
 
 const stats = [
   { value: 300, suffix: "+", label: "Collaborateurs" },
-  { value: 5000, suffix: "+", label: "Rendez-vous Livres / Mois" },
-  { value: 2, suffix: "M+", label: "Appels Achemines" },
-  { value: 98, suffix: "%", label: "Taux de Satisfaction" },
+  { value: 5000, suffix: "+", label: "Rendez-vous livrés / mois" },
+  { value: 2, suffix: "M+", label: "Appels acheminés" },
+  { value: 98, suffix: "%", label: "Taux de satisfaction" },
 ]
 
 function AnimatedCounter({

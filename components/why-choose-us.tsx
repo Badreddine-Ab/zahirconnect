@@ -7,39 +7,39 @@ import { useInView } from "@/hooks/use-in-view"
 const reasons = [
   {
     icon: MapPin,
-    title: "Proximite",
+    title: "Proximité",
     description:
-      "Zahir Connect est une entreprise a taille humaine basee a Marrakech, garantissant un accompagnement personnalise et reactif.",
+      "Zahir Connect est une entreprise à taille humaine basée à Marrakech, garantissant un accompagnement personnalisé et réactif.",
   },
   {
     icon: FileText,
     title: "Reporting",
     description:
-      "Un reporting detaille et a la carte, en fonction de vos besoins specifiques pour un suivi transparent de vos campagnes.",
+      "Un reporting détaillé et à la carte, en fonction de vos besoins spécifiques pour un suivi transparent de vos campagnes.",
   },
   {
     icon: Zap,
-    title: "Efficacite",
+    title: "Efficacité",
     description:
-      "Nos equipes sont efficaces, reactives et disponibles pour assurer la performance optimale de vos operations.",
+      "Nos équipes sont efficaces, réactives et disponibles pour assurer la performance optimale de vos opérations.",
   },
   {
     icon: Award,
     title: "Expertise",
     description:
-      "Une parfaite maitrise et une connaissance approfondie du marche du telemarketing et de la relation client.",
+      "Une parfaite maîtrise et une connaissance approfondie du marché du télémarketing et de la relation client.",
   },
   {
     icon: Wrench,
-    title: "Outils Innovants",
+    title: "Outils innovants",
     description:
-      "Nos outils innovants et collaboratifs nous permettent de repondre a l'ensemble de vos projets avec precision.",
+      "Nos outils innovants et collaboratifs nous permettent de répondre à l'ensemble de vos projets avec précision.",
   },
   {
     icon: LifeBuoy,
-    title: "Support Continu",
+    title: "Support continu",
     description:
-      "Une assistance et un support complet avant, pendant et apres vos campagnes pour garantir votre satisfaction.",
+      "Une assistance et un support complet avant, pendant et après vos campagnes pour garantir votre satisfaction.",
   },
 ]
 
@@ -54,13 +54,13 @@ export function WhyChooseUs() {
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mb-16 text-center">
           <span className="mb-4 inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
-            Pourquoi Nous Choisir
+            Pourquoi nous choisir
           </span>
           <h2 className="mb-4 font-display text-3xl font-bold text-foreground md:text-4xl lg:text-5xl text-balance">
-            L'Excellence au Service de Votre Business
+            L'excellence au service de votre business
           </h2>
           <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Notre centre d'appels a Marrakech vous offre un service de telemarketing offshore de qualite, grace a notre expertise dans le domaine du call center.
+            Notre centre d'appels à Marrakech vous offre un service de télémarketing offshore de qualité, grâce à notre expertise dans le domaine du call center.
           </p>
         </div>
 

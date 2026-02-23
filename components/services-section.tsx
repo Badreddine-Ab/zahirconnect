@@ -86,7 +86,7 @@ export function ServicesSection() {
             Nos Services
           </span>
           <h2 className="mb-4 font-display text-3xl font-bold text-foreground md:text-4xl lg:text-5xl text-balance">
-            Des Solutions Complètes Pour Votre Entreprise
+            Des solutions complètes pour votre entreprise
           </h2>
           <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
             Quatre pôles d'expertise complémentaires pour accélérer votre croissance et digitaliser vos opérations.

@@ -57,7 +57,7 @@ const benefits = [
   { icon: TrendingUp, label: "Evolution rapide" },
   { icon: Banknote, label: "Salaire compétitif + primes" },
   { icon: Clock, label: "Horaires flexibles" },
-  { icon: Users, label: "Equipe soudée de 300+" },
+  { icon: Users, label: "Équipe soudée de 300+" },
   { icon: MapPin, label: "Marrakech centre" },
 ]
 
@@ -251,10 +251,10 @@ export function RecrutementForm() {
             custom={1}
             className="mb-6 font-display text-4xl font-bold leading-tight text-foreground md:text-5xl lg:text-6xl text-balance"
           >
-            Construisez Votre{" "}
+            Construisez votre{" "}
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
-                Carrière
+                carrière
               </span>
               {/* animated underline */}
               <motion.span
@@ -264,7 +264,7 @@ export function RecrutementForm() {
                 transition={{ duration: 0.8, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
               />
             </span>{" "}
-            avec Nous
+            avec nous
           </motion.h1>
 
           {/* Sub */}

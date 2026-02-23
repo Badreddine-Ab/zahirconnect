@@ -16,7 +16,7 @@ export function CtaBanner() {
           <Headphones className="h-8 w-8" />
         </div>
         <h2 className="mb-4 font-display text-3xl font-bold text-foreground md:text-4xl lg:text-5xl text-balance">
-          Discutons de Votre Projet
+          Discutons de votre projet
         </h2>
         <p className="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
           Chaque grande aventure commence par une simple conversation. Notre équipe est là pour vous écouter et bâtir ensemble la solution qui vous correspond.
@@ -26,14 +26,14 @@ export function CtaBanner() {
             href="/contact"
             className="group flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/25"
           >
-            Commencer la Conversation
+            Commencer la conversation
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Link>
           <a
-            href="tel:+212524000000"
+            href="tel:+212690192593"
             className="rounded-lg border border-border bg-secondary/50 px-8 py-4 text-base font-semibold text-foreground transition-all hover:border-primary/50 hover:bg-secondary"
           >
-            +212 524 00 00 00
+            +212 690 192 593
           </a>
         </div>
       </div>

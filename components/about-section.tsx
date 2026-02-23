@@ -6,12 +6,12 @@ import { cn } from "@/lib/utils"
 import { useInView } from "@/hooks/use-in-view"
 
 const highlights = [
-  "Equipe hautement qualifiee et multilingue",
+  "Équipe hautement qualifiée et multilingue",
   "Technologies de pointe et outils collaboratifs",
-  "Accompagnement personnalise pour chaque client",
-  "Flexibilite et adaptation rapide a vos besoins",
-  "Localisation strategique a Marrakech, Maroc",
-  "Conformite aux normes internationales de qualite",
+  "Accompagnement personnalisé pour chaque client",
+  "Flexibilité et adaptation rapide à vos besoins",
+  "Localisation stratégique à Marrakech, Maroc",
+  "Conformité aux normes internationales de qualité",
 ]
 
 export function AboutSection() {
@@ -31,7 +31,7 @@ export function AboutSection() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
                 src="/images/about.jpg"
-                alt="Zahir Connect - Notre equipe a Marrakech"
+                alt="Zahir Connect - Notre équipe à Marrakech"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -45,8 +45,8 @@ export function AboutSection() {
                   <span className="font-display text-lg font-bold">10+</span>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Annees</p>
-                  <p className="text-xs text-muted-foreground">{"d'Experience"}</p>
+                  <p className="text-sm font-semibold text-foreground">Années</p>
+                  <p className="text-xs text-muted-foreground">{"d'expérience"}</p>
                 </div>
               </div>
             </div>
@@ -60,16 +60,16 @@ export function AboutSection() {
             )}
           >
             <span className="mb-4 inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
-              A Propos de Nous
+              À propos de nous
             </span>
             <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-4xl text-balance">
-              Qui Sommes-Nous ?
+              Qui sommes-nous ?
             </h2>
             <p className="mb-6 text-base leading-relaxed text-muted-foreground">
-              Zahir Connect est un centre d'appels base a Marrakech, specialise dans le telemarketing offshore et la gestion de la relation client. Notre equipe dediee s'engage a vous accompagner efficacement dans la realisation de vos objectifs commerciaux.
+              Zahir Connect est un centre d'appels basé à Marrakech, spécialisé dans le télémarketing offshore et la gestion de la relation client. Notre équipe dédiée s'engage à vous accompagner efficacement dans la réalisation de vos objectifs commerciaux.
             </p>
             <p className="mb-8 text-base leading-relaxed text-muted-foreground">
-              Avec une approche personnalisee et des technologies de pointe, nous avons su nous affirmer en tant qu'entreprise de reference, adaptee rapidement aux exigences de nos clients dans des delais tres courts.
+              Avec une approche personnalisée et des technologies de pointe, nous avons su nous affirmer en tant qu'entreprise de référence, adaptée rapidement aux exigences de nos clients dans des délais très courts.
             </p>
 
             <div className="mb-8 grid gap-3 sm:grid-cols-2">

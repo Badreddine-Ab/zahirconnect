@@ -3,16 +3,81 @@ import { Footer } from "@/components/footer"
 import { Layers, Headphones, FileSpreadsheet, Calculator, ArrowRight, CheckCircle2 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: 'Externalisation BPO - Service Clients & Administration',
-  description: "Externalisez vos processus support avec Zahir Connect : service clients multicanal, gestion administrative et pré-comptabilité. Réduisez vos coûts de 40 à 60%. Maroc.",
+  title: 'Externalisation BPO - Service Clients & Administratif',
+  description: "Externalisez vos processus support avec Zahir Connect : service clients multicanal, gestion administrative et pré-comptabilité. Réduisez vos coûts jusqu'à 60%. Marrakech.",
   alternates: { canonical: '/services/bpo' },
   openGraph: {
     title: 'Externalisation BPO | Zahir Connect',
     description: "Concentrez-vous sur votre coeur de métier — confiez-nous votre service clients, administration et pré-comptabilité.",
     url: '/services/bpo',
   },
+  twitter: {
+    title: 'Externalisation BPO - Service Clients & Admin | Zahir Connect',
+    description: "Réduisez vos coûts jusqu'à 60% en externalisant vos processus support. Expert BPO à Marrakech.",
+  },
 }
 import Link from "next/link"
+
+const faqs = [
+  {
+    q: "Qu'est-ce que l'externalisation BPO ?",
+    a: "Le BPO (Business Process Outsourcing) consiste à confier certains processus non-stratégiques de votre entreprise à un prestataire externe spécialisé. Chez Zahir Connect, nous prenons en charge votre service clients, votre gestion administrative et votre pré-comptabilité pour que vous puissiez vous concentrer sur votre cœur de métier.",
+  },
+  {
+    q: "Quels processus peut-on externaliser avec Zahir Connect ?",
+    a: "Nous prenons en charge : la gestion multicanale du service clients (appels, emails, chat), le traitement des documents et la saisie de données, la gestion des dossiers administratifs, la saisie des factures, les rapprochements bancaires et les relances clients. Chaque périmètre est défini sur mesure selon vos besoins.",
+  },
+  {
+    q: "Comment sont sécurisées mes données lors d'une externalisation ?",
+    a: "La sécurité des données est notre priorité. Nous appliquons des accords de confidentialité (NDA) stricts, utilisons des connexions sécurisées (VPN), et formons nos agents aux bonnes pratiques de gestion des données sensibles. Nous sommes conformes aux exigences de nos clients européens.",
+  },
+  {
+    q: "Quel est le délai de mise en place d'une prestation BPO ?",
+    a: "En fonction de la complexité du périmètre, le démarrage d'une prestation BPO prend entre 2 et 4 semaines. Cette période inclut l'audit des processus, la formation des équipes, la mise en place des outils et les tests avant le démarrage en production.",
+  },
+]
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Externalisation BPO',
+    description: "Externalisation des processus métier : service clients multicanal, gestion administrative et pré-comptabilité. Réduction de coûts jusqu'à 60%.",
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Zahir Connect',
+      url: 'https://zahirconnect.ma',
+      telephone: '+212690192593',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Boulevard Mohammed V, Gueliz',
+        addressLocality: 'Marrakech',
+        addressCountry: 'MA',
+      },
+    },
+    serviceType: 'Business Process Outsourcing',
+    areaServed: { '@type': 'Country', name: 'Maroc' },
+    url: 'https://zahirconnect.ma/services/bpo',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://zahirconnect.ma' },
+      { '@type': 'ListItem', position: 2, name: 'Nos Services', item: 'https://zahirconnect.ma/services' },
+      { '@type': 'ListItem', position: 3, name: 'Externalisation BPO', item: 'https://zahirconnect.ma/services/bpo' },
+    ],
+  },
+]
 
 const features = [
   {
@@ -34,15 +99,15 @@ const features = [
 
 const benefits = [
   {
-    title: "Concentrez-vous sur l'Essentiel",
+    title: "Concentrez-vous sur l'essentiel",
     description: "En externalisant vos processus support, vos équipes internes peuvent se consacrer à votre cœur de métier et à la stratégie.",
   },
   {
-    title: "Réduction des Coûts Fixes",
-    description: "Transformez vos coûts fixes en coûts variables. Payez uniquement pour les heures travaillées, sans charges sociales ni infrastructure.",
+    title: "Réduction des coûts",
+    description: "Optimisez vos coûts et payez à la carte. Choisissez le volume qui vous correspond et payez uniquement les heures travaillées sans charges sociales ni infrastructures.",
   },
   {
-    title: "Continuité de Service",
+    title: "Continuité de service",
     description: "Nos équipes assurent la continuité de vos opérations même pendant les congés ou les pics d'activité, sans rupture de service.",
   },
 ]
@@ -50,6 +115,7 @@ const benefits = [
 export default function BpoPage() {
   return (
     <main className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}
       <section className="relative overflow-hidden py-24 lg:py-32">
@@ -75,7 +141,7 @@ export default function BpoPage() {
                   href="/contact"
                   className="group flex items-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
                 >
-                  Externaliser mes Processus
+                  Externaliser mes processus
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
@@ -129,6 +195,29 @@ export default function BpoPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-20 bg-secondary/20">
+        <div className="mx-auto max-w-3xl px-6">
+          <div className="mb-10 text-center">
+            <h2 className="mb-3 font-display text-2xl font-bold text-foreground md:text-3xl">
+              Questions fréquentes
+            </h2>
+            <p className="text-muted-foreground">Tout ce que vous devez savoir sur notre service BPO.</p>
+          </div>
+          <div className="flex flex-col divide-y divide-border rounded-2xl border border-border bg-card overflow-hidden">
+            {faqs.map((faq) => (
+              <details key={faq.q} className="group p-6 cursor-pointer">
+                <summary className="flex items-center justify-between gap-4 font-display font-semibold text-foreground list-none">
+                  {faq.q}
+                  <span className="ml-4 shrink-0 text-primary transition-transform duration-300 group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Bottom CTA */}
       <section className="border-t border-border bg-secondary/30 py-16">
         <div className="mx-auto max-w-3xl px-6 text-center">
@@ -142,7 +231,7 @@ export default function BpoPage() {
             href="/contact"
             className="group inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
           >
-            Commencer la Conversation
+            Commencer la conversation
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>

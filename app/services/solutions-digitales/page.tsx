@@ -11,8 +11,73 @@ export const metadata: Metadata = {
     description: "De l'idée à la mise en production — sites web, apps mobiles, cybersécurité et cloud. Expert digital à Marrakech.",
     url: '/services/solutions-digitales',
   },
+  twitter: {
+    title: 'Solutions Digitales - Web, Mobile & Cloud | Zahir Connect',
+    description: "Développement web, apps mobiles et hébergement cloud sur mesure. Expert digital à Marrakech.",
+  },
 }
 import Link from "next/link"
+
+const faqs = [
+  {
+    q: "Combien de temps prend le développement d'un site web ?",
+    a: "Un site vitrine bien conçu prend généralement 3 à 6 semaines selon sa complexité. Une plateforme e-commerce ou une application web sur mesure demande 2 à 4 mois. Nous travaillons en méthodologie agile avec des sprints hebdomadaires pour garantir la transparence et le respect des délais.",
+  },
+  {
+    q: "Quelles technologies utilisez-vous pour le développement ?",
+    a: "Nous utilisons les technologies les plus performantes du marché : Next.js, React et Vue.js pour le frontend, Node.js et Python pour le backend, React Native et Flutter pour le mobile. Pour le cloud, nous travaillons sur AWS, Azure et OVH selon vos préférences.",
+  },
+  {
+    q: "Proposez-vous un support et une maintenance après livraison ?",
+    a: "Oui, nous proposons des contrats de maintenance évolutive incluant les mises à jour de sécurité, les corrections de bugs, les évolutions fonctionnelles et un support technique réactif. Vous ne serez jamais seul après la mise en production.",
+  },
+  {
+    q: "Développez-vous des applications mobiles iOS et Android ?",
+    a: "Absolument. Nous développons des applications natives (Swift/Kotlin) pour des performances maximales, et des applications cross-platform avec React Native ou Flutter pour optimiser les coûts de développement tout en couvrant iOS et Android simultanément.",
+  },
+]
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Solutions Digitales',
+    description: "Développement de sites web, applications mobiles iOS/Android, sécurité informatique et hébergement cloud. Solutions digitales sur mesure à Marrakech.",
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Zahir Connect',
+      url: 'https://zahirconnect.ma',
+      telephone: '+212690192593',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Boulevard Mohammed V, Gueliz',
+        addressLocality: 'Marrakech',
+        addressCountry: 'MA',
+      },
+    },
+    serviceType: 'Développement Digital',
+    areaServed: { '@type': 'Country', name: 'Maroc' },
+    url: 'https://zahirconnect.ma/services/solutions-digitales',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://zahirconnect.ma' },
+      { '@type': 'ListItem', position: 2, name: 'Nos Services', item: 'https://zahirconnect.ma/services' },
+      { '@type': 'ListItem', position: 3, name: 'Solutions Digitales', item: 'https://zahirconnect.ma/services/solutions-digitales' },
+    ],
+  },
+]
 
 const features = [
   {
@@ -55,6 +120,7 @@ const benefits = [
 export default function SolutionsDigitalesPage() {
   return (
     <main className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}
       <section className="relative overflow-hidden py-24 lg:py-32">
@@ -129,6 +195,29 @@ export default function SolutionsDigitalesPage() {
                 <h3 className="font-display text-lg font-semibold text-foreground">{benefit.title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">{benefit.description}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-secondary/20">
+        <div className="mx-auto max-w-3xl px-6">
+          <div className="mb-10 text-center">
+            <h2 className="mb-3 font-display text-2xl font-bold text-foreground md:text-3xl">
+              Questions fréquentes
+            </h2>
+            <p className="text-muted-foreground">Tout ce que vous devez savoir sur nos solutions digitales.</p>
+          </div>
+          <div className="flex flex-col divide-y divide-border rounded-2xl border border-border bg-card overflow-hidden">
+            {faqs.map((faq) => (
+              <details key={faq.q} className="group p-6 cursor-pointer">
+                <summary className="flex items-center justify-between gap-4 font-display font-semibold text-foreground list-none">
+                  {faq.q}
+                  <span className="ml-4 shrink-0 text-primary transition-transform duration-300 group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{faq.a}</p>
+              </details>
             ))}
           </div>
         </div>

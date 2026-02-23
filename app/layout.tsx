@@ -19,17 +19,21 @@ export const metadata: Metadata = {
     default: 'Zahir Connect | Call Center Marrakech - Prospection, Télévente & BPO',
   },
   description: "Centre d'appel à Marrakech spécialisé en prospection commerciale, télévente, externalisation BPO et solutions digitales. Boostez votre business avec des experts.",
-  keywords: ['call center marrakech', 'centre appel maroc', 'prospection commerciale', 'télévente', 'externalisation bpo', 'solutions digitales', 'telemarketing maroc'],
+  keywords: ['call center marrakech', 'centre appel maroc', 'prospection commerciale', 'télévente', 'externalisation bpo', 'solutions digitales', 'telemarketing maroc', 'call center maroc', 'télémarketing offshore marrakech'],
   authors: [{ name: 'Zahir Connect' }],
   robots: { index: true, follow: true },
+  alternates: {
+    canonical: BASE_URL,
+    languages: { 'fr': BASE_URL },
+  },
   openGraph: {
     type: 'website',
     locale: 'fr_MA',
     siteName: 'Zahir Connect',
-    images: [{ url: '/images/Sans titre-3.png', width: 400, height: 400, alt: 'Zahir Connect - Call Center Marrakech' }],
+    images: [{ url: '/images/og-default.jpg', width: 1200, height: 630, alt: 'Zahir Connect - Call Center Marrakech' }],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     site: '@zahirconnect',
   },
 }
@@ -44,10 +48,10 @@ const jsonLd = {
   name: 'Zahir Connect',
   description: "Centre d'appel à Marrakech spécialisé en prospection commerciale, télévente, externalisation BPO et solutions digitales.",
   url: BASE_URL,
-  telephone: '+212524000000',
+  telephone: '+212690192593',
   email: 'contact@zahirconnect.ma',
-  logo: `${BASE_URL}/images/Sans titre-3.png`,
-  image: `${BASE_URL}/images/Sans titre-3.png`,
+  logo: `${BASE_URL}/images/zahir-connect-logo.png`,
+  image: `${BASE_URL}/images/zahir-connect-logo.png`,
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Boulevard Mohammed V, Gueliz',

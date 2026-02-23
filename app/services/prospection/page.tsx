@@ -11,8 +11,73 @@ export const metadata: Metadata = {
     description: "Leads qualifiés, pipeline rempli — externalisez votre prospection avec notre centre d'appel à Marrakech.",
     url: '/services/prospection',
   },
+  twitter: {
+    title: 'Prospection Commerciale B2B & B2C | Zahir Connect',
+    description: "Générez un flux constant de leads qualifiés. Campagnes d'appels ciblées depuis Marrakech.",
+  },
 }
 import Link from "next/link"
+
+const faqs = [
+  {
+    q: "Qu'est-ce que la prospection commerciale externalisée ?",
+    a: "La prospection externalisée consiste à confier vos campagnes de génération de leads à une équipe spécialisée comme Zahir Connect. Nos agents qualifiés contactent des prospects ciblés en votre nom, qualifient les opportunités et vous transmettent des rendez-vous prêts à conclure.",
+  },
+  {
+    q: "Combien de temps faut-il pour lancer une campagne de prospection ?",
+    a: "Une campagne de prospection peut être opérationnelle en 5 à 10 jours ouvrés. Ce délai inclut le brief commercial, la définition de la cible, la formation des agents et la validation du script d'appel.",
+  },
+  {
+    q: "Comment mesurez-vous les résultats d'une campagne ?",
+    a: "Nous mettons à disposition un reporting en temps réel avec les KPIs clés : nombre d'appels émis, taux de contact, taux de qualification, nombre de rendez-vous pris et coût par lead. Un rapport hebdomadaire est envoyé automatiquement.",
+  },
+  {
+    q: "Travaillez-vous en B2B et en B2C ?",
+    a: "Oui, Zahir Connect opère sur les deux segments. En B2B, nous ciblons les décideurs d'entreprises selon des critères précis (secteur, taille, poste). En B2C, nous travaillons à partir de fichiers prospects enrichis et segmentés selon votre produit.",
+  },
+]
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Prospection Commerciale B2B & B2C',
+    description: "Campagnes de prospection téléphonique B2B et B2C avec ciblage précis, agents spécialisés et reporting en temps réel.",
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Zahir Connect',
+      url: 'https://zahirconnect.ma',
+      telephone: '+212690192593',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Boulevard Mohammed V, Gueliz',
+        addressLocality: 'Marrakech',
+        addressCountry: 'MA',
+      },
+    },
+    serviceType: 'Prospection Commerciale',
+    areaServed: { '@type': 'Country', name: 'Maroc' },
+    url: 'https://zahirconnect.ma/services/prospection',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://zahirconnect.ma' },
+      { '@type': 'ListItem', position: 2, name: 'Nos Services', item: 'https://zahirconnect.ma/services' },
+      { '@type': 'ListItem', position: 3, name: 'Prospection Commerciale', item: 'https://zahirconnect.ma/services/prospection' },
+    ],
+  },
+]
 
 const features = [
   {
@@ -50,6 +115,7 @@ const benefits = [
 export default function ProspectionPage() {
   return (
     <main className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}
       <section className="relative overflow-hidden py-24 lg:py-32">
@@ -124,6 +190,29 @@ export default function ProspectionPage() {
                 <h3 className="font-display text-lg font-semibold text-foreground">{benefit.title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">{benefit.description}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-secondary/20">
+        <div className="mx-auto max-w-3xl px-6">
+          <div className="mb-10 text-center">
+            <h2 className="mb-3 font-display text-2xl font-bold text-foreground md:text-3xl">
+              Questions fréquentes
+            </h2>
+            <p className="text-muted-foreground">Tout ce que vous devez savoir sur notre service de prospection.</p>
+          </div>
+          <div className="flex flex-col divide-y divide-border rounded-2xl border border-border bg-card overflow-hidden">
+            {faqs.map((faq) => (
+              <details key={faq.q} className="group p-6 cursor-pointer">
+                <summary className="flex items-center justify-between gap-4 font-display font-semibold text-foreground list-none">
+                  {faq.q}
+                  <span className="ml-4 shrink-0 text-primary transition-transform duration-300 group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{faq.a}</p>
+              </details>
             ))}
           </div>
         </div>

@@ -12,7 +12,7 @@ const footerLinks = {
     { label: "Solutions Digitales", href: "/services/solutions-digitales" },
   ],
   entreprise: [
-    { label: "À Propos", href: "/a-propos" },
+    { label: "À propos", href: "/a-propos" },
     { label: "Nos Services", href: "/services" },
     { label: "Pourquoi Nous", href: "/pourquoi-nous" },
     { label: "Contact", href: "/contact" },
@@ -29,7 +29,7 @@ export function Footer() {
             <div className="mb-4 flex items-center gap-2">
               <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl">
                 <Image
-                  src="/images/Sans titre-3.png"
+                  src="/images/zahir-connect-logo.png"
                   alt="Zahir Connect Logo"
                   width={400}
                   height={400}
@@ -46,12 +46,12 @@ export function Footer() {
               </div>
             </div>
             <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-              Zahir Connect - Centre d'appels a Marrakech offrant des services de telemarketing offshore de qualite superieure pour developper votre entreprise.
+              Zahir Connect - Centre d'appels à Marrakech offrant des services de télémarketing offshore de qualité supérieure pour développer votre entreprise.
             </p>
             <div className="flex flex-col gap-3">
-              <a href="tel:+212524000000" className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary">
+              <a href="tel:+212690192593" className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary">
                 <Phone className="h-4 w-4" />
-                +212 524 00 00 00
+                +212 690 192 593
               </a>
               <a href="mailto:contact@zahirconnect.ma" className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary">
                 <Mail className="h-4 w-4" />
@@ -99,10 +99,10 @@ export function Footer() {
           {/* Newsletter / CTA */}
           <div>
             <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-foreground">
-              Restez Connecté
+              Restez connecté
             </h4>
             <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-              Recevez nos dernieres actualites et offres directement dans votre boite mail.
+              Recevez nos dernières actualités et offres directement dans votre boîte mail.
             </p>
             <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
               <input
@@ -123,15 +123,15 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            {`\u00A9 ${new Date().getFullYear()} Zahir Connect. Tous droits reserves.`}
+            {`\u00A9 ${new Date().getFullYear()} Zahir Connect. Tous droits réservés.`}
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
+            <Link href="/mentions-legales" className="text-sm text-muted-foreground transition-colors hover:text-primary">
               Mentions Légales
-            </a>
-            <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
+            </Link>
+            <Link href="/politique-confidentialite" className="text-sm text-muted-foreground transition-colors hover:text-primary">
               Politique de Confidentialité
-            </a>
+            </Link>
           </div>
         </div>
       </div>

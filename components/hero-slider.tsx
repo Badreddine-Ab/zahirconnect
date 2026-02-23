@@ -9,24 +9,24 @@ import { motion, AnimatePresence } from "framer-motion"
 const slides = [
   {
     image: "/images/hero-1.jpg",
-    tag: "Centre d'Appels · Marrakech",
-    title: "Votre Partenaire en Telemarketing Offshore",
+    tag: "Centre d'appels · Marrakech",
+    title: "Votre partenaire en télémarketing offshore",
     description:
-      "Zahir Connect vous offre un service de telemarketing offshore de qualité supérieure. Notre expertise et notre passion pour l'excellence font de nous le choix idéal pour votre entreprise.",
-    stat: { value: "300+", label: "Collaborateurs" },
+      "Zahir Connect vous offre un service de télémarketing offshore de qualité supérieure. Notre expertise et notre passion pour l'excellence font de nous le choix idéal pour votre entreprise.",
+    stat: { value: "10+", label: "Ans d'expérience" },
   },
   {
     image: "/images/hero-2.jpg",
-    tag: "Excellence & Performance",
-    title: "Des Solutions Sur Mesure Pour Votre Croissance",
+    tag: "Excellence & performance",
+    title: "Des solutions sur mesure pour votre croissance",
     description:
       "Nous personnalisons notre approche pour comprendre et traiter au mieux votre projet. Chaque client bénéficie d'un accompagnement dédié et d'une stratégie adaptée.",
-    stat: { value: "98%", label: "Satisfaction Client" },
+    stat: { value: "98%", label: "Satisfaction client" },
   },
   {
     image: "/images/hero-3.jpg",
-    tag: "Expertise Éprouvée",
-    title: "Une Équipe Dédiée à Votre Réussite",
+    tag: "Expertise éprouvée",
+    title: "Une équipe dédiée à votre réussite",
     description:
       "Plus de 300 collaborateurs qualifiés, des technologies de pointe et un management d'excellence pour garantir les meilleurs résultats à nos partenaires.",
     stat: { value: "24/7", label: "Disponibilité" },
@@ -158,7 +158,7 @@ export function HeroSlider() {
               className="flex items-center gap-8 pt-1"
             >
               {[
-                { value: "300+", label: "Collaborateurs" },
+                { value: "10+", label: "Ans d'expérience" },
                 { value: "98%", label: "Satisfaction" },
                 { value: "24/7", label: "Disponibilité" },
               ].map((s, i) => (

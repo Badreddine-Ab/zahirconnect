@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contactez-nous - Devis Gratuit',
-  description: "Contactez Zahir Connect pour un devis gratuit. Bd Mohammed V, Gueliz, Marrakech. Tél: +212 524 00 00 00. Lun–Ven 08h–20h, Sam 09h–14h.",
+  title: 'Contactez Zahir Connect - Call Center Marrakech',
+  description: "Contactez Zahir Connect, votre centre d'appel à Marrakech. Devis gratuit, réponse sous 24h. Tél : +212 690 192 593. Bd Mohammed V, Guéliz. Lun–Ven 08h–20h.",
   alternates: { canonical: '/contact' },
   openGraph: {
     title: 'Contact | Zahir Connect',

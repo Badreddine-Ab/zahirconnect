@@ -50,9 +50,9 @@ export function Navbar() {
       <div className="hidden lg:block bg-secondary/80 border-b border-border">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 text-sm text-muted-foreground">
           <div className="flex items-center gap-6">
-            <a href="tel:+212524000000" className="flex items-center gap-2 transition-colors hover:text-primary">
+            <a href="tel:+212690192593" className="flex items-center gap-2 transition-colors hover:text-primary">
               <Phone className="h-3.5 w-3.5" />
-              <span>+212 524 00 00 00</span>
+              <span>+212 690 192 593</span>
             </a>
             <a href="mailto:contact@zahirconnect.ma" className="flex items-center gap-2 transition-colors hover:text-primary">
               <Mail className="h-3.5 w-3.5" />
@@ -77,7 +77,7 @@ export function Navbar() {
           <Link href="/" onClick={() => handleLinkClick("/")} className="group flex items-center gap-2">
             <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl">
               <Image
-                src="/images/Sans titre-3.png"
+                src="/images/zahir-connect-logo.png"
                 alt="Zahir Connect Logo"
                 width={400}
                 height={400}
@@ -137,7 +137,7 @@ export function Navbar() {
             onClick={() => handleLinkClick("/contact")}
             className="hidden rounded-lg bg-primary px-6 py-2.5 text-base font-semibold text-primary-foreground transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/25 lg:block"
           >
-            Parlons de Votre Projet
+            Parlons de votre projet
           </Link>
 
           {/* Mobile toggle */}
@@ -182,7 +182,7 @@ export function Navbar() {
               onClick={() => handleLinkClick("/contact")}
               className="mt-2 rounded-lg bg-primary px-6 py-3 text-center text-base font-semibold text-primary-foreground"
             >
-              Parlons de Votre Projet
+              Parlons de votre projet
             </Link>
           </div>
         </div>
