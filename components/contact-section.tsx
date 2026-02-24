@@ -89,9 +89,9 @@ export function ContactSection() {
                       rel="noopener noreferrer"
                       className="text-sm text-muted-foreground transition-colors hover:text-primary"
                     >
-                      Bureau 18, 5ème étage, Centre d'affaires Bergis
+                      Centre d'affaires At Taoufiq 5, 4ème étage
                       <br />
-                      3 Avenue Safi, Marrakech 40090
+                      Bureau 20, Marrakech
                     </a>
                   </div>
                 </div>
@@ -114,8 +114,8 @@ export function ContactSection() {
             {/* Embedded map */}
             <div className="overflow-hidden rounded-xl border border-border">
               <iframe
-                title="Zahir Connect — Bureau 18, Centre d'affaires Bergis, 3 Avenue Safi, Marrakech"
-                src="https://maps.google.com/maps?q=Centre+d%27affaires+Bergis%2C+3+Avenue+Safi%2C+Marrakech+40090%2C+Maroc&output=embed&hl=fr&z=17"
+                title="Zahir Connect — Centre d'affaires At Taoufiq 5, Bureau 20, Marrakech"
+                src="https://maps.google.com/maps?q=Centre+d%27affaires+At+Taoufiq+5%2C+Marrakech%2C+Maroc&output=embed&hl=fr&z=17"
                 width="100%"
                 height="220"
                 style={{ border: 0, display: 'block' }}

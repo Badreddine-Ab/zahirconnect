@@ -19,7 +19,7 @@ export default function MentionsLegalesPage() {
             <h2 className="mb-3 font-display text-lg font-semibold text-foreground">Éditeur du site</h2>
             <p>
               <strong>Zahir Connect</strong><br />
-              Bureau 18, 5ème étage, Centre d'affaires Bergis, 3 Avenue Safi<br />
+              Centre d'affaires At Taoufiq 5, 4ème étage, Bureau 20<br />
               Marrakech, Maroc<br />
               Téléphone : +212 690 192 593<br />
               Email : contact@zahirconnect.com

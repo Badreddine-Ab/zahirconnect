@@ -59,7 +59,7 @@ const jsonLd = [
       telephone: '+212690192593',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Bureau 18, Centre d\'affaires Bergis, 3 Avenue Safi',
+        streetAddress: 'Centre d\'affaires At Taoufiq 5, 4ème étage, Bureau 20',
         addressLocality: 'Marrakech',
         addressCountry: 'MA',
       },

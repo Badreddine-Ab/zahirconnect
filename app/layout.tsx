@@ -54,9 +54,9 @@ const jsonLd = {
   image: `${BASE_URL}/images/zahir-connect-logo.png`,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Bureau 18, Centre d\'affaires Bergis, 3 Avenue Safi',
+    streetAddress: 'Centre d\'affaires At Taoufiq 5, 4ème étage, Bureau 20',
     addressLocality: 'Marrakech',
-    postalCode: '40090',
+
     addressRegion: 'Marrakech-Safi',
     addressCountry: 'MA',
   },
