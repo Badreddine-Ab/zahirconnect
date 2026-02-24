@@ -4,6 +4,7 @@ import { Inter, Space_Grotesk } from 'next/font/google'
 import { NavProvider } from "@/lib/navigation-context"
 import { PageTransitionWrapper } from "@/components/page-transition"
 import { Navbar } from "@/components/navbar"
+import { CookieBanner } from "@/components/cookie-banner"
 
 import './globals.css'
 
@@ -108,6 +109,7 @@ export default function RootLayout({
           <PageTransitionWrapper>
             {children}
           </PageTransitionWrapper>
+          <CookieBanner />
         </NavProvider>
       </body>
     </html>

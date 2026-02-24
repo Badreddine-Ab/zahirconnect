@@ -1,9 +1,12 @@
 "use client"
 
-import React, { useState } from "react"
-import { Phone, Mail, MapPin, Send, Clock } from "lucide-react"
+import React, { useState, useEffect } from "react"
+import Link from "next/link"
+import { Phone, Mail, MapPin, Send, Clock, Map } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useInView } from "@/hooks/use-in-view"
+
+type Status = "idle" | "loading" | "success" | "error"
 
 export function ContactSection() {
   const { ref, isInView } = useInView({ threshold: 0.1 })
@@ -16,17 +19,45 @@ export function ContactSection() {
     sujet: "",
     message: "",
   })
-  const [submitted, setSubmitted] = useState(false)
+  const [consent, setConsent] = useState(false)
+  const [status, setStatus] = useState<Status>("idle")
+  const [mapConsent, setMapConsent] = useState(false)
 
+  // Sync map consent with cookie banner decision
+  useEffect(() => {
+    try {
+      if (localStorage.getItem("zc_cookie_consent") === "accepted") {
+        setMapConsent(true)
+      }
+    } catch {}
 
+    const handler = () => setMapConsent(true)
+    window.addEventListener("zc:consent-accepted", handler)
+    return () => window.removeEventListener("zc:consent-accepted", handler)
+  }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
+    if (!consent) return
+    setStatus("loading")
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formState,
+          telephone: `${formState.indicatif} ${formState.telephone}`,
+        }),
+      })
+      if (!res.ok) throw new Error("upstream")
+      setStatus("success")
       setFormState({ nom: "", prenom: "", email: "", indicatif: "+212", telephone: "", sujet: "", message: "" })
-    }, 3000)
+      setConsent(false)
+      setTimeout(() => setStatus("idle"), 5000)
+    } catch {
+      setStatus("error")
+      setTimeout(() => setStatus("idle"), 4000)
+    }
   }
 
   return (
@@ -74,7 +105,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-foreground">Email</p>
-                    <p className="text-sm text-muted-foreground">contact@zahirconnect.com</p>
+                    <a href="mailto:contact@zahirconnect.com" className="text-sm text-muted-foreground transition-colors hover:text-primary">contact@zahirconnect.com</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -111,18 +142,34 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* Embedded map */}
+            {/* Lazy-loaded map */}
             <div className="overflow-hidden rounded-xl border border-border">
-              <iframe
-                title="Zahir Connect — Centre d'affaires At Taoufiq 5, Bureau 20, Marrakech"
-                src="https://maps.google.com/maps?q=Centre+d%27affaires+At+Taoufiq+5%2C+Marrakech%2C+Maroc&output=embed&hl=fr&z=17"
-                width="100%"
-                height="220"
-                style={{ border: 0, display: 'block' }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+              {mapConsent ? (
+                <iframe
+                  title="Zahir Connect — Centre d'affaires At Taoufiq 5, Bureau 20, Marrakech"
+                  src="https://maps.google.com/maps?q=Centre+d%27affaires+At+Taoufiq+5%2C+Marrakech%2C+Maroc&output=embed&hl=fr&z=17"
+                  width="100%"
+                  height="220"
+                  style={{ border: 0, display: "block" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              ) : (
+                <button
+                  onClick={() => setMapConsent(true)}
+                  className="group flex h-[220px] w-full flex-col items-center justify-center gap-3 bg-secondary/60 text-center transition-colors hover:bg-secondary"
+                  aria-label="Afficher la carte Google Maps"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card shadow-sm transition-transform group-hover:scale-110">
+                    <Map className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-foreground">Afficher la carte</p>
+                    <p className="text-xs text-muted-foreground">Chargera Google Maps</p>
+                  </div>
+                </button>
+              )}
               <a
                 href="https://maps.app.goo.gl/WqsiiiCsZKQAnw7k6"
                 target="_blank"
@@ -149,6 +196,7 @@ export function ContactSection() {
               <h3 className="mb-6 font-display text-xl font-semibold text-foreground">
                 Nous contacter
               </h3>
+
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label htmlFor="nom" className="mb-1.5 block text-sm font-medium text-foreground">
@@ -259,18 +307,50 @@ export function ContactSection() {
                   />
                 </div>
               </div>
+
+              {/* GDPR consent checkbox */}
+              <div className="mt-5 flex items-start gap-3">
+                <input
+                  id="contact-consent"
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  required
+                  className="mt-0.5 h-4 w-4 cursor-pointer accent-primary"
+                />
+                <label htmlFor="contact-consent" className="cursor-pointer text-xs leading-relaxed text-muted-foreground">
+                  J&apos;accepte que mes données soient traitées par Zahir Connect pour répondre à ma demande,
+                  conformément à la{" "}
+                  <Link href="/politique-confidentialite" className="text-primary underline-offset-2 hover:underline">
+                    politique de confidentialité
+                  </Link>
+                  . Ces données seront conservées 12 mois maximum.
+                </label>
+              </div>
+
+              {/* Status messages */}
+              {status === "error" && (
+                <p className="mt-4 rounded-lg border border-destructive/30 bg-destructive/5 px-4 py-3 text-xs text-destructive">
+                  Une erreur est survenue. Veuillez réessayer ou nous écrire directement à contact@zahirconnect.com
+                </p>
+              )}
+
               <button
                 type="submit"
-                disabled={submitted}
+                disabled={status === "loading" || status === "success"}
                 className={cn(
                   "mt-6 flex w-full items-center justify-center gap-2 rounded-lg px-8 py-3.5 text-sm font-semibold transition-all",
-                  submitted
-                    ? "bg-green-500 text-foreground"
+                  status === "success"
+                    ? "bg-green-500 text-white"
+                    : status === "loading"
+                    ? "cursor-not-allowed bg-primary/60 text-primary-foreground"
                     : "bg-primary text-primary-foreground hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/25"
                 )}
               >
-                {submitted ? (
+                {status === "success" ? (
                   "Message envoyé !"
+                ) : status === "loading" ? (
+                  "Envoi en cours…"
                 ) : (
                   <>
                     Envoyer le message

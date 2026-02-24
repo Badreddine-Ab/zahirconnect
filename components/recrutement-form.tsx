@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect, useRef } from "react"
+import Link from "next/link"
 import { motion, AnimatePresence, useInView as useFramerInView } from "framer-motion"
 import {
   Users,
@@ -175,6 +176,7 @@ type FormState = {
   ville: string
   email: string
   experience: string
+  consent: boolean
 }
 
 type Status = "idle" | "loading" | "success" | "error"
@@ -189,6 +191,7 @@ export function RecrutementForm() {
     ville: "",
     email: "",
     experience: "",
+    consent: false,
   })
   const [status, setStatus] = useState<Status>("idle")
 
@@ -207,7 +210,7 @@ export function RecrutementForm() {
         body: JSON.stringify(form),
       })
       setStatus("success")
-      setForm({ nom: "", prenom: "", telephone: "", ville: "", email: "", experience: "" })
+      setForm({ nom: "", prenom: "", telephone: "", ville: "", email: "", experience: "", consent: false })
     } catch {
       setStatus("error")
     }
@@ -612,9 +615,25 @@ export function RecrutementForm() {
                       )}
                     </motion.button>
 
-                    <p className="mt-4 text-center text-xs text-muted-foreground">
-                      En soumettant ce formulaire, vous acceptez d&apos;être contacté par notre équipe RH.
-                    </p>
+                    {/* GDPR consent checkbox */}
+                    <div className="mt-5 flex items-start gap-3">
+                      <input
+                        id="recrutement-consent"
+                        type="checkbox"
+                        checked={form.consent}
+                        onChange={(e) => setForm((prev) => ({ ...prev, consent: e.target.checked }))}
+                        required
+                        className="mt-0.5 h-4 w-4 cursor-pointer accent-amber-500"
+                      />
+                      <label htmlFor="recrutement-consent" className="cursor-pointer text-xs leading-relaxed text-muted-foreground">
+                        J&apos;accepte que mes données soient traitées par Zahir Connect dans le cadre de ma candidature,
+                        conformément à la{" "}
+                        <Link href="/politique-confidentialite" className="text-amber-600 underline-offset-2 hover:underline">
+                          politique de confidentialité
+                        </Link>
+                        . Ces données seront conservées 2 ans maximum.
+                      </label>
+                    </div>
                   </motion.form>
                 )}
               </AnimatePresence>

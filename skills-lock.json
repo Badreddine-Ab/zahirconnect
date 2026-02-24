@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "gdpr-data-handling": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "computedHash": "53855cd5a9c62b68a56e9137bf2f4a2621a7d716cc51857dcd902ad2fbfd1eb7"
+    },
     "seo-audit": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
